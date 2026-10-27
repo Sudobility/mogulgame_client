@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/mogulgame_client",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "Client library for Starter API with TanStack Query hooks",
   "type": "module",
   "main": "dist/index.js",

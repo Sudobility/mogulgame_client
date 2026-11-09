@@ -48,12 +48,14 @@ breaking change for every consumer.
 ## Commands
 
 ```bash
-bun run build          # Build ESM
+bun install            # Install deps first (test:unit needs vitest in node_modules/.bin)
+bun run build          # Build ESM (tsc + scripts/fix-esm-imports.mjs for Node ESM resolution)
 bun run clean          # Remove dist/
-bun run test           # Run Vitest tests (colocated *.test.ts files)
-bun run typecheck      # TypeScript check
-bun run lint           # Run ESLint
-bun run verify         # typecheck + test + build (use before commit)
+bun run test:unit      # Run Vitest once (colocated *.test.ts files). NOTE: no `test` script exists
+bun run test:watch     # Vitest in watch mode
+bun run typecheck      # TypeScript check (tsc --noEmit)
+bun run lint           # Run ESLint over src/
+bun run verify         # typecheck + test:unit + build (use before commit)
 bun run prepublishOnly # Clean + build (runs on publish)
 ```
 
